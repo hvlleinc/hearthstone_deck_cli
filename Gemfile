@@ -1,7 +1,9 @@
 source "https://rubygems.org"
 
 # Specify your gem's dependencies in hearthstone_deck_cli.gemspec
-gemspec
-gem 'httparty', '~> 0.13.7'
+
+
+gem 'httparty'
 gem "rake", "~> 12.0"
+gem "require_all"
 
