@@ -27,31 +27,34 @@ require_all "lib"
 # # ## ask use which one to add to the deck 
 # ### ask for another search
 
-class HearthstoneDeckCli
+# class HearthstoneDeckCli
 
-    attr_accessor :deck
-    @deck = [] 
+#     attr_accessor :deck
+#     @deck = [] 
 
-    #welcome the user
-    "Hello, Welcome to Hearthstone, Would you like to search some cards?"
+#     #welcome the user
+#     "Hello, Welcome to Hearthstone, Would you like to search some cards?"
 
-    #search by class 
+#     #search by class 
 
-    "Please select a class to search from: [1-Demon Hunter] [ 2- Druid] [3 - Hunter] [4 - Mage] [Paladin] [Priest] [Rogue] [Shaman] [Warlock] [Warrior] [Neutral]"
+#     "Please select a class to search from: [1-Demon Hunter] [ 2- Druid] [3 - Hunter] [4 - Mage] [Paladin] [Priest] [Rogue] [Shaman] [Warlock] [Warrior] [Neutral]"
 
-    #search_by_keyword
+#     #search_by_keyword
 
-    "Please Input a keyword into the search: "
+#     "Please Input a keyword into the search: "
 
-    #returns 10 cards
+#     #returns 10 cards
 
-    "Please select a card for detailed information about it"
-
-    
+#     "Please select a card for detailed information about it"
 
 
 
 
-    #
 
-end
+
+#     #
+
+# end
+
+cards = Api.new("https://us.api.blizzard.com/hearthstone/cards?locale=en_US&keyword=rush&access_token=USwhHfJv275CYeVUAjrqqK3O85Ilk1AuPa")
+cards.search_by_keyword("rush")
