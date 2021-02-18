@@ -1,3 +1,5 @@
+
+
 class Cli
 
 
@@ -5,9 +7,10 @@ class Cli
 def run 
    
     puts "Hello, Welcome to the Hearthstone Deck Builder Version 1!"
-
-    api = Api.new()
+    
    
+#    hearthstone_api = Api.new()
+  
     input = nil
         while input != "goodbye"
         puts "You can search for 1 card by class, keyword, or name!"
@@ -22,12 +25,13 @@ def run
         
 
     if input == "name"
+       
+        api.search_by_name(input)
         puts "Please input the name of the card you'd like to search for:"
         input = gets.strip.downcase 
-# api = Api.new("#{@url}locale=en_US&set=standard&name=#{user_input}&page=1&pageSize=10", headers: @headers)
-        api.search_by_name(input)
 
-    #    cards = Api.new("https://us.api.blizzard.com/hearthstone/cards?locale=en_US&set=standard&textFilter=#{input}&page=1&pageSize=10&access_token=USfyitpY6SKjR7X3eX3YzlPYmZl4lIvoi0")
+
+    #    cards = Api.new()
     #    cards.card_by_class(input) 
 
     end
