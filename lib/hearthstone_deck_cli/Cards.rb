@@ -9,7 +9,7 @@ class Cards
 
 #  attr_reader :name, :attack, :cardSetId, :manaCost, :minionTypeId, :keywordIds
  
- @@all = []
+#  @@all = []
 
 
   def initialize()  
@@ -22,22 +22,27 @@ class Cards
     end
   end
     
-  
-  # def card_by_name(name_hash = {})
-  #   name_hash.each do |k, v|
-  #     puts "#{k}: #{v}"
-  #   end
-  # end
+  def card_by_keyword(keyword_hash = {})
+  keyword_hash.each do |k, v|
+    puts "#{k}: #{v}"
+  end
+end
+
+  def card_by_name(name_hash = {})
+    name_hash.each do |k, v|
+      puts "#{k}: #{v}"
+    end
+  end
 
   # private
 
-  def save 
-    @@all << self
-  end
+  # def save 
+  #   @@all << self
+  # end
 
-  def self.all
-    @@all
-  end
+  # def self.all
+  #   @@all
+  # end
 
 
 end
