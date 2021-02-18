@@ -26,49 +26,44 @@ require "pry"
       
     def initialize(url)
       @url = "https://us.api.blizzard.com/hearthstone/cards?"
-      @headers = {"Authorization" => "Bearer USwhHfJv275CYeVUAjrqqK3O85Ilk1AuPa" }
+      @headers = {"Authorization" => "Bearer USfyitpY6SKjR7X3eX3YzlPYmZl4lIvoi0" }
     end 
     ## need something like this for all the diff searches
 
-    def search_by_keyword(user_input)
+    def search_by_class(user_input)
       # data = HTTParty.get("#{@url}/keyword#{user_input}", headers: @headers)
       # data = HTTParty.get("#{@url}keyword=#{user_input}&set=standard", headers: @headers)
-      data = HTTParty.get("#{@url}locale=en_US&set=standard&keyword=#{user_input}&page=1&pageSize=10", headers: @headers)
+      data = HTTParty.get("#{@url}locale=en_US&set=standard&class=#{user_input}&page=1&pageSize=10", headers: @headers)
       
-      
+  
     deck_hash = {
+      name: data["cards"].first["name"],
+      class: data["cards"].first[""]
+      attack: data["cards"].first["attack"],
+      manaCost:  data["cards"].first["manaCost"],
         cardSetId: data["cards"].first["cardSetId"],
-        attack: data["cards"].first["attack"],
-        manaCost:  data["cards"].first["manaCost"],
-        name: data["cards"].first["name"],
+       
+        
         minionTypeId: data["cards"].first["minionTypeId"],
         keywordIds: data["cards"].first["keywordIds"]
       }
+      deck_hash.each do |k, v|
+        puts "#{k}: #{v}"
       
-      # deck = Cards.new(deck_hash)
-   
-        # deck = Cards.new(deck_hash)
-      
+         end
+
+      cards = Cards.new(deck_hash)
       end
          
     
   end
 
-        
+        # binding.pry
      
  
 
-
-
-
-
-  
-
-   
- 
-
-  # malygos = Api.new("https://us.api.blizzard.com/hearthstone/cards?locale=en_US&textFilter=malygos")
-  # malygos.search_by_keyword("malygos")
+cards = Api.new("https://us.api.blizzard.com/hearthstone/cards?locale=en_US&set=standard&class=mage&page=1&pageSize=10&access_token=USfyitpY6SKjR7X3eX3YzlPYmZl4lIvoi0")
+cards.search_by_class("mage")
 
   
   

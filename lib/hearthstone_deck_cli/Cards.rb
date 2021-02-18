@@ -2,6 +2,9 @@
 #     puts "hello"
 #     binding.pry
 # end
+
+
+
 class Cards
 
 
@@ -10,15 +13,13 @@ class Cards
 
   @@all = []
 def initialize(deck_hash)  
-    
-    hash.each do |k, v|
-#    x = "@#{k.to_s} = #{v}"
+
+  deck_hash.each do |k, v|
+    puts "#{k}: #{v}"
+    save
+     end
    
-        self.send
-        # binding.pry
-    end
-    @@all << self
-end
+
 
 def save
   @@all << self
@@ -28,17 +29,11 @@ def self.all
   @@all
 end
 
-private
-
-def minionTypeId=(minionTypeId)
-    @minionTypeId = minionTypeId
-end
-
-def keywordIds=(keywordIds)
-    @keywordIds = keywordIds
-end
 
 end
+
+
+
 
 
 
