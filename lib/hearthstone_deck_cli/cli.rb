@@ -13,20 +13,24 @@ def run
   
     input = nil
         while input != "goodbye"
+            puts 
         puts "You can search for 1 card by class, keyword, or name!"
-        puts "Classes are 'demon hunter', 'druid', 'hunter', 'mage', 'paladin', 'priest, 'rogue', 'shaman', 'warlock', 'warrior', and 'neutral' "
+        puts 
+        puts "Classes are 'druid', 'hunter', 'mage', 'paladin', 'priest, 'rogue', 'shaman', 'warlock', 'warrior', and 'neutral' "
+        puts
         puts "Keywords options for this version of the search are 'battlecry', 'rush' and 'charge'"
+        puts
         puts "Names are searched via a text filter and can be typed in directly."
+        puts
         puts "To quit, say 'goodbye'"
     
         input = gets.strip.downcase
-        #end of wile
-        #User inputs number 1-11 and returns a list of 10 mage cards 
+        
         
 
     if input == "name"
        puts
-        # api.search_by_name(input)
+        
         puts "Please input the name of the card you'd like to search for:"
         input = gets.strip.downcase 
         puts 
@@ -66,6 +70,7 @@ def run
        
     end # end internal`
 
+  
 
 end #end of Class
 end

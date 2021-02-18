@@ -9,7 +9,7 @@ class Cards
 
 #  attr_reader :name, :attack, :cardSetId, :manaCost, :minionTypeId, :keywordIds
  
-#  @@all = []
+ @@all = []
 
 
   def initialize()  
@@ -34,15 +34,15 @@ end
     end
   end
 
-  # private
 
-  # def save 
-  #   @@all << self
-  # end
 
-  # def self.all
-  #   @@all
-  # end
+  def save 
+    @@all << self
+  end
+
+  def self.all
+    @@all
+  end
 
 
 end

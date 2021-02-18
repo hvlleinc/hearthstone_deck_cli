@@ -36,7 +36,7 @@ require_relative "./cli"
       # data = HTTParty.get("#{@url}keyword=#{user_input}&set=standard", headers: @headers)
       data = HTTParty.get("#{@url}locale=en_US&set=standard&class=#{user_input}&page=1&pageSize=10", headers: @headers)
       
-  
+  #collecting the data in an easily readable format
     class_hash = {
       name: data["cards"].first["name"],
       class: data["cards"].first["classId"],
@@ -46,14 +46,14 @@ require_relative "./cli"
         minionTypeId: data["cards"].first["minionTypeId"],
         keywordIds: data["cards"].first["keywordIds"]
       }
-    # puts class_hash
+    # calling on the Card class to create card objects 
       cards_class = Cards.new()
       card_obj = cards_class.card_by_class(class_hash)
       # card = Card.new
       end
 
 
-      
+      #the rest of the methods follow the same pattern, adhering to DRY
       def search_by_keyword(user_input)
         # data = HTTParty.get("#{@url}/keyword#{user_input}", headers: @headers)
         # data = HTTParty.get("#{@url}keyword=#{user_input}&set=standard", headers: @headers)
