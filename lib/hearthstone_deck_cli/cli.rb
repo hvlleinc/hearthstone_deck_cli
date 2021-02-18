@@ -25,11 +25,11 @@ def run
         
 
     if input == "name"
-       
+       puts
         # api.search_by_name(input)
         puts "Please input the name of the card you'd like to search for:"
         input = gets.strip.downcase 
-
+        puts 
 
        cards = Api.new()
        cards.search_by_name(input) 
@@ -38,7 +38,7 @@ def run
 
     if input == "class"
        
-        # api.search_by_name(input)
+        
         puts "Please insert the slug of the class of cards you want to search for: [demon hunter] [druid] [hunter] [mage] [paladin] [priest] [rogue] [shaman] [warlock] [warrior] [neutral]"
         # binding.pry
         input = gets.strip.downcase 
@@ -48,14 +48,15 @@ def run
        cards.search_by_class(input) 
 
     end
+
+
     if input == "keyword"
        puts "Please input the keyword of the cards you'd like to search for:"
 
        input = gets.strip.downcase
        cards = Api.new()
-       api.search_by_keyword(input)
-    #    cards = Api.new("https://us.api.blizzard.com/hearthstone/cards?locale=en_US&set=standard&keyword=#{input}&page=1&pageSize=10&access_token=USfyitpY6SKjR7X3eX3YzlPYmZl4lIvoi0")
-    #    cards.card_by_class(input) 
+       cards.search_by_keyword(input)
+    
     end
 
 
