@@ -1,4 +1,4 @@
-require "pry" 
+# require "pry" 
 require "httparty"
 
 # require_relative "./hearthstone_deck_cli/version"

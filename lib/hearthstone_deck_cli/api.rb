@@ -1,5 +1,6 @@
-# require "httparty"require "pry"
-# require_relative "./cards"
+require "httparty"
+# require "pry"
+require_relative "./cli"
 
 
 
