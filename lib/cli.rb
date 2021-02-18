@@ -37,14 +37,23 @@ require_all "lib"
 
  when input != "exit"
     "Hello, Welcome to Hearthstone, Would you like to search some cards?"
-    "You can search by class only at this time! Please select a class to search from: [1-Demon Hunter] [ 2- Druid] [3 - Hunter] [4 - Mage] [5 - Paladin] [6 - Priest] 
-    [7 - Rogue] [8 - Shaman] [9 - Warlock] [10 - Warrior] [11- Neutral]"
-    "Select a class 1-11"
+    "Would you like to search by keyword, class, or name?"
+   
  end
 #User inputs number 1-11 and returns a list of 10 mage cards 
 
+if input = "name"
+   "Please input the name of the card you'd like to search for:"
 
+end
 
+if input = "keyword"
+   "Please input the keyword of the cards you'd like to search for:"
+end
+
+if input = "class"
+ "Please insert the slug of the class of cards you want to search for: [1 - demon hunter] [ 2 - druid] [3 - hunter] [4 - mage] [5 paladin] [6 - preist ] [7 - Rogue] [8 - Shaman] [9 - Warlock] [10 - Warrior] [11 - Neutral]"
+end
 end
 
 

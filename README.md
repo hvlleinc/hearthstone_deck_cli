@@ -6,23 +6,18 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'hearthstone_deck_cli'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
+To install this gem utilize:
 
     $ gem install hearthstone_deck_cli
 
 ## Usage
 
-TODO: Write usage instructions here
+Run
+
+ $ hearthstone_deck_cli 
+
+
+then follow the prompts on the screen
 
 ## Development
 
@@ -39,7 +34,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-
-##CLI Project Help
-
-##APIs -> 

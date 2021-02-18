@@ -7,27 +7,32 @@
 
 class Cards
 
+ attr_reader :name, :attack, :cardSetId, :manaCost, :minionTypeId, :keywordIds
+ 
+ @@all = []
 
-    attr_accessor :name, :attack, :cardSetId, :manaCost
-    attr_reader :minionTypeId, :keywordIds
+ 
+    def initialize()  
+    
+    end
 
-  @@all = []
-def initialize(deck_hash)  
-
-  deck_hash.each do |k, v|
-    puts "#{k}: #{v}"
+  def card_by_class(class_hash = {})
+      class_hash.each do |k, v|
+      puts "#{k}: #{v}"
+  end
+    
     save
-     end
+  end
    
 
 
-def save
-  @@all << self
-end
+  def save 
+    @@all << self
+  end
 
-def self.all
-  @@all
-end
+  def self.all
+    @@all
+  end
 
 
 end
