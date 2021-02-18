@@ -1,10 +1,12 @@
 !#/usr/bin/env ruby
 
 require "bundler/setup"
-require "hearthstone_deck_cli"
-
-
-testing
+require "../lib/hearthstone_deck_cli/cli"
 
 
 
+
+
+
+cli = Cli.new
+cli.run
