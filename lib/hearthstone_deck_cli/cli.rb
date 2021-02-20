@@ -28,15 +28,15 @@ def run
         
         
 
-    if input == "name"
+    if input == "get all cards"
        puts
         
-        puts "Please input the name of the card you'd like to search for:"
+        puts "Here all the cards"
         input = gets.strip.downcase 
         puts 
 
        cards = Api.new()
-       cards.search_by_name(input) 
+       cards.get_all_cards
 
     end
 

@@ -2,3 +2,7 @@ Things I can add later include:
 
 - We can parse through the list and return individual information about a specific card
     "what's is this cards specifc attack power?" Can I see the abilities/ 
+
+
+    Authenticator
+        curl -u "48412f7bce064247b777c5edd47c8fbf":"dmV9Cn32G64hnWxf8PzkLVft1htMPKco" -d grant_type=client_credentials https://us.battle.net/oauth/token

@@ -27,76 +27,116 @@ require_relative "./cli"
       
     def initialize()
       @url = "https://us.api.blizzard.com/hearthstone/cards?"
-      @headers = {"Authorization" => "Bearer USfyitpY6SKjR7X3eX3YzlPYmZl4lIvoi0" }
+      @headers = {"Authorization" => "Bearer USvCfh3HmuAlyvXynC65a7G0mZO0ZK3Tnr" }
     end 
     ## need something like this for all the diff searches
 
-    def search_by_class(user_input)
+    def get_all_cards
       # data = HTTParty.get("#{@url}/keyword#{user_input}", headers: @headers)
       # data = HTTParty.get("#{@url}keyword=#{user_input}&set=standard", headers: @headers)
-      data = HTTParty.get("#{@url}locale=en_US&set=standard&class=#{user_input}&page=1&pageSize=10", headers: @headers)
-      
+    i = 1
+      3.times do
+      data = HTTParty.get("#{@url}locale=en_US&pageSize=500&page=#{i}&set=standard", headers: @headers)
+      data["cards"].each do |card|
+  
+        card_hash = {
+            name: card["name"],
+            class: card["classId"],
+            attack: card["attack"],
+            manaCost: card["manaCost"],
+            cardSetId: card["cardSetId"],
+              minionTypeId: card["minionTypeId"],
+              keywordIds: card["keywordIds"] 
+            }
+            
+              Cards.new(card_hash)
+            end
+       i += 1
+      end
+    
+      # binding.pry
   #collecting the data in an easily readable format
-    class_hash = {
-      name: data["cards"].first["name"],
-      class: data["cards"].first["classId"],
-      attack: data["cards"].first["attack"],
-      manaCost:  data["cards"].first["manaCost"],
-      cardSetId: data["cards"].first["cardSetId"],
-        minionTypeId: data["cards"].first["minionTypeId"],
-        keywordIds: data["cards"].first["keywordIds"]
-      }
+   
+ 
+      # binding.pry
     # calling on the Card class to create card objects 
-      cards_class = Cards.new()
-      card_obj = cards_class.card_by_class(class_hash)
+      # cards_class = Cards.new(card_hash)
+      # card_obj = cards_class.card_by_class(class_hash)
       # card = Card.new
       end
 
 
+
+
+
+  #   def search_by_class(user_input)
+  #     # data = HTTParty.get("#{@url}/keyword#{user_input}", headers: @headers)
+  #     # data = HTTParty.get("#{@url}keyword=#{user_input}&set=standard", headers: @headers)
+  #     data = HTTParty.get("#{@url}locale=en_US&set=standard&class=#{user_input}&page=1&pageSize=10", headers: @headers)
+  #     binding.pry
+  # #collecting the data in an easily readable format
+  #   card_hash = {
+  #     name: data["cards"].first["name"],
+  #     class: data["cards"].first["classId"],
+  #     attack: data["cards"].first["attack"],
+  #     manaCost:  data["cards"].first["manaCost"],
+  #     cardSetId: data["cards"].first["cardSetId"],
+  #       minionTypeId: data["cards"].first["minionTypeId"],
+  #       keywordIds: data["cards"].first["keywordIds"]
+  #     }
+      
+        
+  #   # calling on the Card class to create card objects 
+  #     cards_class = Cards.new(card_hash)
+  #     # card_obj = cards_class.card_by_class(class_hash)
+  #     # card = Card.new
+  #     end
+
+
       #the rest of the methods follow the same pattern, adhering to DRY
-      def search_by_keyword(user_input)
-        # data = HTTParty.get("#{@url}/keyword#{user_input}", headers: @headers)
-        # data = HTTParty.get("#{@url}keyword=#{user_input}&set=standard", headers: @headers)
-        data = HTTParty.get("#{@url}locale=en_US&set=standard&keyword=#{user_input}&page=1&pageSize=10", headers: @headers)
+      # def search_by_keyword(user_input)
+      #   # data = HTTParty.get("#{@url}/keyword#{user_input}", headers: @headers)
+      #   # data = HTTParty.get("#{@url}keyword=#{user_input}&set=standard", headers: @headers)
+      #   data = HTTParty.get("#{@url}locale=en_US&set=standard&keyword=#{user_input}&page=1&pageSize=10", headers: @headers)
         
     
-     keyword_hash = {
-        name: data["cards"].first["name"],
-        class: data["cards"].first["classId"],
-        attack: data["cards"].first["attack"],
-        manaCost:  data["cards"].first["manaCost"],
-        cardSetId: data["cards"].first["cardSetId"],
-          minionTypeId: data["cards"].first["minionTypeId"],
-          keywordIds: data["cards"].first["keywordIds"]
-        }
-      # puts class_hash
-        keyword_class = Cards.new()
-        keyword_obj = keyword_class.card_by_keyword(keyword_hash)
-        # card = Card.new
-        end
+      #   card_hash = {
+      #   name: data["cards"].first["name"],
+      #   class: data["cards"].first["classId"],
+      #   attack: data["cards"].first["attack"],
+      #   manaCost:  data["cards"].first["manaCost"],
+      #   cardSetId: data["cards"].first["cardSetId"],
+      #     minionTypeId: data["cards"].first["minionTypeId"],
+      #     keywordIds: data["cards"].first["keywordIds"]
+      #   }
+      # # puts class_hash
+      #   keyword_class = Cards.new(card_hash)
+      #   # keyword_obj = keyword_class.card_by_keyword(card_hash)
+      #   # card = Card.new
+      #   end
       
 
 
-        def search_by_name(user_input)
-          # data = HTTParty.get("#{@url}/keyword#{user_input}", headers: @headers)
-          # data = HTTParty.get("#{@url}keyword=#{user_input}&set=standard", headers: @headers)
-          data = HTTParty.get("#{@url}locale=en_US&set=standard&name=#{user_input}&page=1&pageSize=10", headers: @headers)
+      #   def search_by_name(user_input)
+      #     # data = HTTParty.get("#{@url}/keyword#{user_input}", headers: @headers)
+      #     # data = HTTParty.get("#{@url}keyword=#{user_input}&set=standard", headers: @headers)
+      #     data = HTTParty.get("#{@url}locale=en_US&set=standard&name=#{user_input}&page=1&pageSize=10", headers: @headers)
           
       
-        name_hash = {
-          name: data["cards"].first["name"],
-          class: data["cards"].first["classId"],
-          attack: data["cards"].first["attack"],
-          manaCost:  data["cards"].first["manaCost"],
-          cardSetId: data["cards"].first["cardSetId"],
-            minionTypeId: data["cards"].first["minionTypeId"],
-            keywordIds: data["cards"].first["keywordIds"]
-          }
-        # puts class_hash
-          name_class = Cards.new()
-          name_obj = name_class.card_by_name(name_hash)
-          # card = Card.new
-          end
+      #     card_hash = {
+      #     name: data["cards"].first["name"],
+      #     class: data["cards"].first["classId"],
+      #     attack: data["cards"].first["attack"],
+      #     manaCost:  data["cards"].first["manaCost"],
+      #     cardSetId: data["cards"].first["cardSetId"],
+      #       minionTypeId: data["cards"].first["minionTypeId"],
+      #       keywordIds: data["cards"].first["keywordIds"]
+      #     }
+      #   # puts class_hash
+      #     name_class = Cards.new(card_hash)
+      #     name_obj = name_class.card_by_name(card_hash)
+      #     # card = Card.new
+      #     end
           
   
 
