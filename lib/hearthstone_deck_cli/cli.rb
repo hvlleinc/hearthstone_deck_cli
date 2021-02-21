@@ -10,15 +10,24 @@ def run
     
    
    hearthstone_api = Api.new()
-  
+   hearthstone_api.get_all_cards
+
+#Adheres to DRY - reusable code that 
+  def display_cards(card)
+   puts %( name: #{card.name}
+   classId: #{card.classId}
+   attack: #{card.attack}
+   manaCost: #{card.manaCost}
+   keywordIds: #{card.keywordIds} )
+            
+  end
+
     input = nil
         while input != "goodbye"
             puts 
-        puts "You can search for 1 card by class, keyword, or name!"
+        puts "You can search for cards by name, or class"
         puts 
         puts "Classes are 'druid', 'hunter', 'mage', 'paladin', 'priest, 'rogue', 'shaman', 'warlock', 'warrior', and 'neutral' "
-        puts
-        puts "Keywords options for this version of the search are 'battlecry', 'rush' and 'charge'"
         puts
         puts "Names are searched via a text filter and can be typed in directly."
         puts
@@ -28,41 +37,37 @@ def run
         
         
 
-    if input == "get all cards"
-       puts
+    if input == "name"
+  
         
-        puts "Here all the cards"
+        puts "Please type in the name of the card you'd like to find:"
         input = gets.strip.downcase 
-        puts 
-
-       cards = Api.new()
-       cards.get_all_cards
-
+        
+      card = Cards.search_by_name(input)
+    #   binding.pry
+        display_cards(card)
     end
 
     if input == "class"
        
         
-        puts "Please insert the slug of the class of cards you want to search for: [demon hunter] [druid] [hunter] [mage] [paladin] [priest] [rogue] [shaman] [warlock] [warrior] [neutral]"
+        puts "Please insert the class ID of the class of cards you want to search for: %( [14 - demon hunter] [2 - druid] [3 - hunter] [4 - mage]
+        [5 - paladin] [6 - priest] [7 - rogue] [8 - shaman] [9 - warlock] [10 - warrior] [11 - neutral]) "
         # binding.pry
         input = gets.strip.downcase 
 
-
-       cards = Api.new()
-       cards.search_by_class(input) 
-
+# iterating through the Cards objects to display all the cards of a classm in this case 86
+       cards = Cards.search_by_class(input)
+    #    binding.pry
+   
+    cards.each do |card|
+        display_cards(card)
+       end
+    end
     end
 
 
-    if input == "keyword"
-       puts "Please input the keyword of the cards you'd like to search for:"
-
-       input = gets.strip.downcase
-       cards = Api.new()
-       cards.search_by_keyword(input)
     
-    end
-
 
 
     if input == "goodbye"
