@@ -1,8 +1,10 @@
 # HearthstoneDeckCli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hearthstone_deck_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
+Oi! Welcome to My Tavern! Aha, just kidding, this is a Hearthstone Searcher Cli which will grow into a deck builder. Please have fun utilizing the searcher and subscribe to my emails for updates at www.halleinc.com! 
 
-TODO: Delete this and the text above, and describe your gem
+In this CLI application, users are able to use their knowledge of Hearthstone cards to conveniently search all the cards available to them in the Hearthstone API database. They can use this searcher to make personal list (old school pen and paper for now - an app update comming soon!) to set goals for their Hearthstone gameplay. We hope you enjoy our app!
+
+Thanks so much!
 
 ## Installation
 
@@ -17,7 +19,7 @@ Run
  $ hearthstone_deck_cli 
 
 
-then follow the prompts on the screen
+then follow the prompts on the screen! Have fun!
 
 ## Development
 
