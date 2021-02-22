@@ -27,7 +27,7 @@ require_relative "./cli"
       
     def initialize()
       @url = "https://us.api.blizzard.com/hearthstone/cards?"
-      @headers = {"Authorization" => "Bearer USYRzd9AJdhlxn0BX2lq7XmMu7h5jSRtWE" }
+      @headers = {"Authorization" => "Bearer USYRzd9AJdhlxn0BX2lq7XmMu7h5jSRtWE"}
     end 
   
 
@@ -46,7 +46,7 @@ require_relative "./cli"
             manaCost: card["manaCost"],
             keywordIds: card["keywordIds"]
             }
-            
+           
               Cards.new(card_hash)
             end
        i += 1

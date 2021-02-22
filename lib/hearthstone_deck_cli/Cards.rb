@@ -36,7 +36,13 @@ class Cards
       end
     end
 
-
+def self.search_by_manaCost(manaCost)
+  
+  self.all.select do |card|
+   
+    card.manaCost == manaCost.to_i
+  end
+end
 
 #   def card_by_class(card_hash = {})
 #     class_hash.each do |k, v|

@@ -6,4 +6,4 @@ source "https://rubygems.org"
 gem 'httparty'
 gem "rake", "~> 12.0"
 gem "require_all"
-gem 'colorize', '~> 0.8.1'
+

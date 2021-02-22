@@ -1,5 +1,5 @@
 !#/usr/bin/env ruby
-require "pry"
+
 require "bundler/setup"
 require "./lib/hearthstone_deck_cli/cli"
 require "./lib/hearthstone_cli_project"

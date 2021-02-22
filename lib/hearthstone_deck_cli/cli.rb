@@ -23,7 +23,7 @@ def run
   end
 
     input = nil
-        while input != "goodbye"
+ while input != "goodbye"
             puts 
         puts "You can search for cards by name, or class"
         puts 
@@ -31,6 +31,7 @@ def run
         puts
         puts "Names are searched via a text filter and can be typed in directly. They are case sensitive! When searching, please use the exact name you want to search for!"
         puts
+        puts "You can now search by manaCost as well in Hearthstone 2.0! manaCost ranges from 0-10+"
         puts "To quit, say 'goodbye'"
     
         input = gets.strip.downcase
@@ -60,12 +61,21 @@ def run
        cards = Cards.search_by_class(input)
     #    binding.pry
    
-    cards.each do |card|
+        cards.each do |card|
         display_cards(card)
-       end
+        end
     end
-    end
+    if input == "manacost"
 
+        puts "Please select a manaCost to search by 1-10:"
+        input = gets.strip.downcase
+
+        cards = Cards.search_by_manaCost(input)
+        cards.each do |card|
+        display_cards(card)
+        end
+    end
+end
 
     
 
