@@ -2,7 +2,7 @@
 
 Oi! Welcome to My Tavern! Aha, just kidding, this is a Hearthstone Searcher Cli which will grow into a deck builder. Please have fun utilizing the searcher and subscribe to my emails for updates at www.halleinc.com! 
 
-In this CLI application, users are able to use their knowledge of Hearthstone cards to conveniently search all the cards available to them in the Hearthstone API database. They can use this searcher to make personal list (old school pen and paper for now - an app update comming soon!) to set goals for their Hearthstone gameplay. We hope you enjoy our app!
+In this CLI application, users are able to use their knowledge of Hearthstone cards to conveniently search all the cards available to them in the Hearthstone API database by name or class. Future functunality includes: pulling cards into a saved database for users to review later, utilizing the colorize gem to improve readability for users, and expanding search parameters. 
 
 Thanks so much!
 

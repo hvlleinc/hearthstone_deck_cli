@@ -27,7 +27,7 @@ require_relative "./cli"
       
     def initialize()
       @url = "https://us.api.blizzard.com/hearthstone/cards?"
-      @headers = {"Authorization" => "Bearer USvCfh3HmuAlyvXynC65a7G0mZO0ZK3Tnr" }
+      @headers = {"Authorization" => "Bearer USYRzd9AJdhlxn0BX2lq7XmMu7h5jSRtWE" }
     end 
   
 

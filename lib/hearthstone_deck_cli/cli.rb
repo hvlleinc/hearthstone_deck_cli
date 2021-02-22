@@ -12,7 +12,7 @@ def run
    hearthstone_api = Api.new()
    hearthstone_api.get_all_cards
 
-#Adheres to DRY - reusable code that 
+#Adheres to DRY - reusable code that I can utilize throughout the program
   def display_cards(card)
    puts %( name: #{card.name}
    classId: #{card.classId}
@@ -29,7 +29,7 @@ def run
         puts 
         puts "Classes are 'druid', 'hunter', 'mage', 'paladin', 'priest, 'rogue', 'shaman', 'warlock', 'warrior', and 'neutral' "
         puts
-        puts "Names are searched via a text filter and can be typed in directly."
+        puts "Names are searched via a text filter and can be typed in directly. They are case sensitive! When searching, please use the exact name you want to search for!"
         puts
         puts "To quit, say 'goodbye'"
     
@@ -56,7 +56,7 @@ def run
         # binding.pry
         input = gets.strip.downcase 
 
-# iterating through the Cards objects to display all the cards of a classm in this case 86
+# iterating through the Cards objects to display all the cards of a classm in this case 86 class cards. Here I am using OOP principles to create a new card (via the Cards class and )
        cards = Cards.search_by_class(input)
     #    binding.pry
    
@@ -79,4 +79,4 @@ def run
 
 end #end of Class
 end
-end
+
